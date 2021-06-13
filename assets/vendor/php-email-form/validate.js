@@ -3,27 +3,36 @@
 * URL: https://bootstrapmade.com/php-email-form/
 * Author: BootstrapMade.com
 */
-// (function () {
-//   "use strict";
-
-//   let forms = document.querySelectorAll('.php-email-form');
+    let forms = document.querySelectorAll('.php-email-form');
+    const submitBtn = document.querySelector('#submit');
 
 //   forms.forEach( function(e) {
-//     e.addEventListener('submit', function(event) {
-//       event.preventDefault();
+    submitBtn.addEventListener('click', (event) => {
 
+console.log("I submitted")
 //       let thisForm = this;
 
 //       let action = thisForm.getAttribute('action');
 //       let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
+
 //       if( ! action ) {
 //         displayError(thisForm, 'The form action property is not set!')
 //         return;
 //       }
-//       thisForm.querySelector('.loading').classList.add('d-block');
-//       thisForm.querySelector('.error-message').classList.remove('d-block');
-//       thisForm.querySelector('.sent-message').classList.remove('d-block');
+// timer = setInterval(function () {
+    document.querySelector('.loading').classList.add('d-block');
+
+// }, 1000)
+setTimeout(showMessage, 3000)
+
+function showMessage(){
+    document.querySelector('.error-message').classList.remove('d-block');
+    document.querySelector('.sent-message').classList.add('d-block');
+    document.querySelector('.loading').classList.remove('d-block');
+
+    }
+    event.preventDefault();
+
 
 //       let formData = new FormData( thisForm );
 
@@ -47,7 +56,8 @@
 //         php_email_form_submit(thisForm, action, formData);
 //       }
 //     });
-//   });
+
+    })
 
 //   function php_email_form_submit(thisForm, action, formData) {
 //     fetch(action, {
@@ -76,10 +86,8 @@
 //     });
 //   }
 
-//   function displayError(thisForm, error) {
-//     thisForm.querySelector('.loading').classList.remove('d-block');
-//     thisForm.querySelector('.error-message').innerHTML = error;
-//     thisForm.querySelector('.error-message').classList.add('d-block');
-//   }
-
-// })();
+    function displayError(thisForm, error) {
+        document.querySelector('.loading').classList.remove('d-block');
+        document.querySelector('.error-message').innerHTML = error;
+        document.querySelector('.error-message').classList.add('d-block');
+    }

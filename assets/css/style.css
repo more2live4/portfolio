@@ -497,6 +497,20 @@ section {
   background-color: #0563bb;
 }
 
+.skills .content ul {
+  list-style: none;
+}
+
+.skills .resume-item {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #0563bb;
+  margin-bottom: 10px;
+}
+
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
